@@ -1,6 +1,6 @@
+import { ParameterRequiredError } from "../../../../errors/parameter-required.error";
 import { User } from "../../entities/user.entity"
-import { ParameterRequiredError } from "../../errors/parameter-required.error"
-import { UserRepository } from "../../repositories/user.repository"
+import { IUserRepository } from "../../repositories/user.repository";
 
 type UserRequest = {
     name: string,
@@ -9,21 +9,23 @@ type UserRequest = {
 }
 
 export class CreateUserUseCase {
+
+    constructor(private userRepository: IUserRepository) {}
+
     async execute(data: UserRequest){
-        const userRepository = UserRepository.getInstance()
         const user = User.create(data);
 
         if(!data.username || !data.password) {
             throw new ParameterRequiredError("Username/Password is required.", 422)
         }
 
-        const existUser = await userRepository.findByUsername(data.username);
+        const existUser = await this.userRepository.findByUsername(data.username);
 
         if(existUser) {
             throw new Error("Username already exists")
         }
 
-        const userCreated =  await userRepository.save(user);
+        const userCreated =  await this.userRepository.save(user);
         return userCreated;
     }
 }

@@ -6,4 +6,4 @@ app.use(express.json())
 app.use(userRouter)
 
 
-app.listen(3000, () => console.log('Sever is running...'));
+app.listen(3000, () => console.log('Sever is running on PORT 3000'));
