@@ -1,6 +1,0 @@
-{"level":"info","message":"Usuário sendo criado!","timestamp":"02/01/2023 23:26:06"}
-{"level":"info","message":"Usuário sendo criado!","timestamp":"02/01/2023 23:26:12"}
-{"level":"error","message":"Error: Username already exists\n    at CreateUserUseCase.<anonymous> (/home/gerson/Documents/NodeJs-Dani/medical_appointment/src/useCases/create-user/create-user.usecase.ts:22:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (/home/gerson/Documents/NodeJs-Dani/medical_appointment/src/useCases/create-user/create-user.usecase.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"02/01/2023 23:26:12"}
-{"level":"info","message":"Usuário sendo criado!","timestamp":"02/01/2023 23:28:32"}
-{"level":"info","message":"Usuário sendo criado!","timestamp":"02/01/2023 23:28:33"}
-{"level":"error","message":"Error: Username already exists\n    at CreateUserUseCase.<anonymous> (/home/gerson/Documents/NodeJs-Dani/medical_appointment/src/useCases/create-user/create-user.usecase.ts:22:19)\n    at Generator.next (<anonymous>)\n    at fulfilled (/home/gerson/Documents/NodeJs-Dani/medical_appointment/src/useCases/create-user/create-user.usecase.ts:5:58)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"02/01/2023 23:28:33"}

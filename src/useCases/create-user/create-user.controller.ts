@@ -15,7 +15,7 @@ export class CreateUserController {
             return response.json(result)
         }catch(err: any) {
             logger.error(err.stack)
-            return response.status(400).json(err.stack)
+            return response.status(err.statusCode).json(err.message)
         }
     }
 }
