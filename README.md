@@ -18,7 +18,16 @@ npm run dev
 
 - Deve ser possível o usuário realizar um cadastro
     - [x] O usuário não precisa estar autenticado no sistema para se cadastrar.
-    - [ ] Não deve ser possível realizar o cadastro de um usuário sem username e senha.
-    - [ ] Não deve ser possível realizar um cadastro de username já existente
-    - [ ] Não deve ser possível o usuário cadastrar a permissão de administrador.
+    - [x] Não deve ser possível realizar o cadastro de um usuário sem username e senha.
+    - [x] Não deve ser possível realizar um cadastro de username já existente.
+    - [x] Não deve ser possível o usuário cadastrar a permissão de administrador.
     
+
+---
+
+## **Cadastro de especialidade**
+- [ ] Deve ser possível um usuário cadastrar uma especialidade
+    - [ ] O usuário precisa estar autenticado na aplicação.
+    - [ ] Não deve ser possível realizar o cadastro de uma especialidade existente.
+    - [ ] O usuário precisa ter permissão de administrador.
+    - [ ] Não deve ser possível cadastrat uma especialidade com nome vázio
