@@ -12,7 +12,7 @@ model User {
   name      String
   username  String   @unique
   password  String
-  idAdmin   Boolean  @default(false)
+  isAdmin   Boolean  @default(false)
   createdAt DateTime @default(now())
 
   @@map("users")
