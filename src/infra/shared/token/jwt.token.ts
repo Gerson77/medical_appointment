@@ -1,6 +1,6 @@
 import { User } from "../../../modules/users/entities/user.entity";
-import { IToken } from "./token";
-import { sign } from 'jsonwebtoken'
+import { IToken, TokenUser } from "./token";
+import { sign, verify } from 'jsonwebtoken'
 import { createHmac } from 'crypto'
 
 export class JWTToken implements IToken {
@@ -17,9 +17,19 @@ export class JWTToken implements IToken {
             }
         }, this.TOKEN_SECRET_CRYPTO, {
             subject: id,
-            expiresIn: '1m'
+            expiresIn: '15m'
         })
 
         return token;
     }
+
+    valite(token: string): TokenUser | null {
+        try {
+            return verify(token, this.TOKEN_SECRET_CRYPTO) as TokenUser
+            
+        } catch (err) {
+            return null            
+        }
+    }
+
 }

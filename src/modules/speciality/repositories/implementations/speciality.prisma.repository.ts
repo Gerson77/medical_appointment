@@ -14,4 +14,11 @@ export class SpecialityPrismaRepository implements ISpecialityRepository {
         return speciality
     }
 
+    async findByName(name: string): Promise<Speciality | null> {
+        return await prismaClient.specialy.findUnique({
+            where: {
+                name
+            }
+        })
+    }
 }

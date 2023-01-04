@@ -27,7 +27,7 @@ npm run dev
 
 ## **Cadastro de especialidade**
 - [ ] Deve ser possível um usuário cadastrar uma especialidade
-    - [ ] O usuário precisa estar autenticado na aplicação.
-    - [ ] Não deve ser possível realizar o cadastro de uma especialidade existente.
-    - [ ] O usuário precisa ter permissão de administrador.
-    - [ ] Não deve ser possível cadastrat uma especialidade com nome vázio
+    - [x] O usuário precisa estar autenticado na aplicação.
+    - [x] Não deve ser possível realizar o cadastro de uma especialidade existente.
+    - [x] O usuário precisa ter permissão de administrador.
+    - [x] Não deve ser possível cadastrat uma especialidade com nome vázio

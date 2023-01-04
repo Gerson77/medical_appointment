@@ -3,6 +3,7 @@ import { User } from "../../entities/user.entity";
 import { IUserRepository } from "../user.repository";
 
 export class UserPrismaRepository implements IUserRepository {
+    
     async findByUsername(username: string): Promise<User | undefined> {
         const user = await prismaClient.user.findUnique({
             where: {
@@ -21,5 +22,13 @@ export class UserPrismaRepository implements IUserRepository {
             }
         })
         return user;
+    }
+
+    async findById(id: string): Promise<User | null> {
+        return await prismaClient.user.findUnique({
+            where: {
+                id
+            }
+        })
     }
 }
