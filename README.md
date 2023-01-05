@@ -31,3 +31,10 @@ npm run dev
     - [x] Não deve ser possível realizar o cadastro de uma especialidade existente.
     - [x] O usuário precisa ter permissão de administrador.
     - [x] Não deve ser possível cadastrat uma especialidade com nome vázio
+
+### **Cadastro de médico**
+- [ ] Deve ser possível cadastrar um médico.
+  - [x] O medíco deve possuir um CRM com 6 dígitos.
+  - [x] O medíco deve estar atrelado a um usuário.
+  - [ ] O medíco deve ter uma e somente uma especialidade.
+  - [x] O medíco deve ser possível cadastrar um médico sem CRM.
