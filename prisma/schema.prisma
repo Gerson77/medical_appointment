@@ -20,12 +20,12 @@ model User {
 }
 
 model Speciality {
-  id          String   @id @default(uuid())
-  name        String   @unique
+  id          String @id @default(uuid())
+  name        String @unique
   description String
-  
-  createdAt   DateTime @default(now())
-  doctor      Doctor[]
+
+  createdAt DateTime @default(now())
+  doctor    Doctor[]
 
   @@map("specialities")
 }
@@ -41,7 +41,20 @@ model Doctor {
   speciality    Speciality @relation(fields: [speciality_id], references: [id])
   speciality_id String
 
-  createdAt DateTime @default(now())
+  createdAt  DateTime    @default(now())
+  DoctorInfo DoctorInfo?
 
   @@map("doctors")
+}
+
+model DoctorInfo {
+  id        String  @id @default(uuid())
+  start_at  String
+  end_at    String
+  duration  Int
+  price     Decimal
+  doctor_id String  @unique
+  doctor    Doctor  @relation(fields: [doctor_id], references: [id])
+
+  @@map("doctor_info")
 }
