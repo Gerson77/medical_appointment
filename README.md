@@ -1,12 +1,3 @@
-<!-- 
-mkdir medical_appointment
-npm init -y
-npm i express
-npm add typescript ts-node nodemon -D
-npx tsc --init
-npm i --save-dev @types/express
-npm run dev 
--->
 
 # Agendamento de consulta médica
 
@@ -16,7 +7,7 @@ npm run dev
 
 ### **Cadastro de Usuário**
 
-- Deve ser possível o usuário realizar um cadastro
+- Deve ser possível o usuário realizar um cadastro.
     - [x] O usuário não precisa estar autenticado no sistema para se cadastrar.
     - [x] Não deve ser possível realizar o cadastro de um usuário sem username e senha.
     - [x] Não deve ser possível realizar um cadastro de username já existente.
@@ -26,11 +17,11 @@ npm run dev
 ---
 
 ## **Cadastro de especialidade**
-- [ ] Deve ser possível um usuário cadastrar uma especialidade
+- [ ] Deve ser possível um usuário cadastrar uma especialidade.
     - [x] O usuário precisa estar autenticado na aplicação.
     - [x] Não deve ser possível realizar o cadastro de uma especialidade existente.
     - [x] O usuário precisa ter permissão de administrador.
-    - [x] Não deve ser possível cadastrat uma especialidade com nome vázio
+    - [x] Não deve ser possível cadastrat uma especialidade com nome vázio.
 
 ### **Cadastro de médico**
 - [ ] Deve ser possível cadastrar um médico.
@@ -38,3 +29,14 @@ npm run dev
   - [x] O medíco deve estar atrelado a um usuário.
   - [x] O medíco deve ter uma e somente uma especialidade.
   - [x] O medíco deve ser possível cadastrar um médico sem CRM.
+
+---
+
+## **Cadastro de Informação do médico**
+
+- [ ] Deve ser possível cadastrar a informação de um médico.
+  - [ ] O médico precisa estar cadastrado.
+  - [ ] O médico deve estar autenticado na aplicação.
+  - [ ] Não deve ser possível ter mais de um registro de informação por médico.
+  - [ ] O horário de termino não deve ser menor que o horário de ínico de atendimento.
+  - [ ] A duração da consulta não pode ser menor ou igual a zero.

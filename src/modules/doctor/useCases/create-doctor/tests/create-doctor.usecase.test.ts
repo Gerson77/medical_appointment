@@ -35,8 +35,6 @@ describe("Crete Doctor Use Case", () => {
             specialityId: speciality.id,
         }
 
-        console.log({ doctorMock })
-
         const createDoctorUseCase = new CreateDoctorUseCase(userRepository, doctorRepository, specialityRepository)
         const doctorCreated = await createDoctorUseCase.execute(doctorMock)
 

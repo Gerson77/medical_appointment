@@ -12,8 +12,6 @@ describe("Doctor entity", () => {
             userId: "USER_ID",
         })
     
-        // console.log({ doctor })
-    
         expect(doctor).toBeInstanceOf(Doctor)
         expect(doctor).toHaveProperty('id')
     })
