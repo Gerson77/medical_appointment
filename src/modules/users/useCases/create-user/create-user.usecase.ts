@@ -12,10 +12,10 @@ type UserRequest = {
 
 export class CreateUserUseCase {
 
-    constructor(private userRepository: IUserRepository, private passwordCrypto: IPasswordCrypto) {}
+    constructor(private userRepository: IUserRepository) {}
 
     async execute(data: UserRequest){
-        const user = User.create(data);
+        const user = await User.create(data);
 
         if(!data.username || !data.password) {
             throw new ParameterRequiredError("Username/Password is required.", 422)
@@ -26,8 +26,7 @@ export class CreateUserUseCase {
         if(existUser) {
             throw new CustomError("Username already exists", 400, "USER_EXISTS_ERROR")
         }
-        const passowrdHashed = await this.passwordCrypto.hash(data.password)
-        user.password = passowrdHashed
+        
         const userCreated =  await this.userRepository.save(user);
         return userCreated;
     }
