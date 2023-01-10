@@ -15,6 +15,7 @@ model User {
   isAdmin   Boolean  @default(false)
   createdAt DateTime @default(now())
   doctor    Doctor?
+  patient   Patient?
 
   @@map("users")
 }
@@ -57,4 +58,14 @@ model DoctorInfo {
   doctor    Doctor  @relation(fields: [doctor_id], references: [id])
 
   @@map("doctor_info")
+}
+
+model Patient {
+  id       String @id @default(uuid())
+  document String @unique
+  email    String @unique
+  user     User   @relation(fields: [user_id], references: [id])
+  user_id  String @unique
+
+  @@map("patients")
 }
