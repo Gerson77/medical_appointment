@@ -118,6 +118,31 @@
                     }
                 }
             }
+        },
+        "/patients": {
+            "post": {
+                "description": "Cadastro de um paciente",
+                "tags": [
+                    "patients"
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/PatientRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Paciente criado com sucesso"
+                    },
+                    "400": {
+                        "description": "Erro de cadastro"
+                    }
+                }
+            }
         }
     },
     "components": {
@@ -238,6 +263,37 @@
                         "type": "number",
                         "description": "Valor do atendimento",
                         "example": "150"
+                    }
+                }
+            },
+            "PatientRequest": {
+                "type": "object",
+                "properties": {
+                    "document": {
+                        "type": "string",
+                        "description": "Documento do paciente",
+                        "example": "123456",
+                        "length": 5
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Email do paciente",
+                        "example": "email@email.com.br"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "Username do paciente",
+                        "example": "username"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Senha do paciente",
+                        "example": "password"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Nome do paciente",
+                        "example": "username"
                     }
                 }
             }
