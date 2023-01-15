@@ -34,9 +34,21 @@
 
 ## **Cadastro de Informação do médico**
 
-- [ ] Deve ser possível cadastrar a informação de um médico.
-  - [ ] O médico precisa estar cadastrado.
-  - [ ] O médico deve estar autenticado na aplicação.
-  - [ ] Não deve ser possível ter mais de um registro de informação por médico.
-  - [ ] O horário de termino não deve ser menor que o horário de ínico de atendimento.
-  - [ ] A duração da consulta não pode ser menor ou igual a zero.
+- [x] Deve ser possível cadastrar a informação de um médico.
+  - [x] O médico precisa estar cadastrado.
+  - [x] O médico deve estar autenticado na aplicação.
+  - [x] Não deve ser possível ter mais de um registro de informação por médico.
+  - [x] O horário de termino não deve ser menor que o horário de ínico de atendimento.
+  - [x] A duração da consulta não pode ser menor ou igual a zero.
+
+--- 
+
+### **Cadastro de agendamento**
+- [ ] Deve ser possível cadastrar um agendamento
+  - [ ] O paciente precisa estar cadastrado no sistema
+  - [ ] O paciente deve estar autenticado na aplicação
+  - [ ] O médico selecionado deve estar cadastrado no sistema
+  - [ ] O médico escolhido deve ter disponibilidade para o hoŕario selecionado
+  - [ ] O médico deve ter disponibilidade para o dia da semana escolhido
+    - [ ] O horároi escolhido deve estar entre o horário de atendimento do médico
+    - [ ] Não deve ser possível cadastrar um agendamento se já existir outro agendamento para o mesmo médico e horário selecionado

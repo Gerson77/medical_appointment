@@ -6,8 +6,6 @@ export class DoctorInfoMapper {
         return {
             doctorId: data.doctor_id,
             duration: data.duration,
-            endAt: data.end_at,
-            startAt: data.start_at,
             price: Number(data.price),
             id: data.id
         }

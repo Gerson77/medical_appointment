@@ -4,6 +4,7 @@ import { PatientMapper } from "../../mapper/patient.map";
 import { IPatientRepository } from "../patient.repository";
 
 export class PatientPrismaRepository implements IPatientRepository {
+    
     async save(data: Patient): Promise<Patient> {
         const patient = await prismaClient.patient.create({
             data: PatientMapper.entityToPrisma(data),
@@ -26,6 +27,31 @@ export class PatientPrismaRepository implements IPatientRepository {
                         }
                     }
                 ]
+            }
+        })
+        if(patient) {
+            return PatientMapper.prismaToEntity(patient)
+        }
+        return null
+    }
+
+    async findById(id: string): Promise<Patient | null> {
+        const patient = await prismaClient.patient.findUnique({
+            where: {
+                id
+            }
+        })
+        if(patient) {
+            return PatientMapper.prismaToEntity(patient)
+        }
+        return null
+    }
+    
+
+    async findByUserId(userId: string): Promise<Patient | null> {
+        const patient = await prismaClient.patient.findUnique({
+            where: {
+                user_id: userId
             }
         })
         if(patient) {
