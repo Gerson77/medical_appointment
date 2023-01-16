@@ -43,8 +43,9 @@ model Doctor {
   speciality_id String
 
   createdAt       DateTime          @default(now())
-  DoctorInfo      DoctorInfo?
-  DoctorSchedules DoctorSchedules[]
+  doctorInfo      DoctorInfo?
+  doctorSchedules DoctorSchedules[]
+  appointment     Appointment[]
 
   @@map("doctors")
 }
@@ -60,11 +61,12 @@ model DoctorInfo {
 }
 
 model Patient {
-  id       String @id @default(uuid())
-  document String @unique
-  email    String @unique
-  user     User   @relation(fields: [user_id], references: [id])
-  user_id  String @unique
+  id          String        @id @default(uuid())
+  document    String        @unique
+  email       String        @unique
+  user        User          @relation(fields: [user_id], references: [id])
+  user_id     String        @unique
+  appointment Appointment[]
 
   @@map("patients")
 }
@@ -78,4 +80,18 @@ model DoctorSchedules {
   doctor      Doctor @relation(fields: [doctor_id], references: [id])
 
   @@map("doctor_schedules")
+}
+
+model Appointment {
+  id        String @id @default(uuid())
+  doctor_id String
+  doctor    Doctor @relation(fields: [doctor_id], references: [id])
+
+  patient_id   String
+  patient      Patient  @relation(fields: [patient_id], references: [id])
+  is_finisched Boolean  @default(false)
+  date         DateTime
+  note         String?
+
+  @@map("appointments")
 }
