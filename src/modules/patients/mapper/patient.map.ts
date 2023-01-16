@@ -1,5 +1,6 @@
+import { PatientWithUserDTO } from "../dto/patient.dto";
 import { Patient } from "../entities/patient.entity";
-import { Patient as PatientPrisma } from "@prisma/client"
+import { Patient as PatientPrisma, User as UserPrisma } from "@prisma/client"
 
 export class PatientMapper {
     static entityToPrisma = (patient: Patient): PatientPrisma => {
@@ -16,6 +17,18 @@ export class PatientMapper {
             email: patient.email,
             id: patient.id,
             userId: patient.user_id
+        }
+    }
+
+    static prismaToEntityIncludesUser = (patient: PatientPrisma & { user: UserPrisma }): PatientWithUserDTO => {
+        return {
+            document: patient.document,
+            email: patient.email,
+            id: patient.id,
+            userId: patient.user_id,
+            user: {
+                name: patient.user.name
+            }
         }
     }
 }
