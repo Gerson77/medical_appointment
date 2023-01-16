@@ -46,8 +46,6 @@ export class CreateAppointmentUseCase{
             doctorExists.id, dateFormat
         )
 
-        console.log({ existsAppointmentDoctor })
-
         if(existsAppointmentDoctor) {
             throw new CustomError('There is already an appointment for this time!')
         }

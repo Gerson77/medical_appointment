@@ -33,7 +33,6 @@ export class DoctorSchedulePrismaRepository implements IDoctorScheduleRespositor
                 }
             }
         })
-        console.log({ result })
 
         if(result) return DoctorScheduleMapper.prismaToEntity(result)
         
