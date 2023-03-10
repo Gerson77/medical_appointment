@@ -15,7 +15,7 @@ export class AuthenticateUserController {
             const result = await authenticateUserUseCase.execute(data)
             return response.json(result)
         }catch(err: any) {
-            return response.status(err.statusCode).json({
+            return response.status(404).json({
                 error: err.message,
             })
         }

@@ -8,7 +8,7 @@ appointmentRouter.get('/appointments/free', async(request, response) => {
     await freeScheduleController.handle(request, response)
 })
 
-appointmentRouter.post('/appointments', ensureAuthenticate,async(request, response) => {
+appointmentRouter.post('/appointments', ensureAuthenticate, async(request, response) => {
     await createAppointmentController.handle(request, response)
 })
 

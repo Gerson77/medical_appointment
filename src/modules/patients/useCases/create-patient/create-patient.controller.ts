@@ -10,8 +10,8 @@ export class CreatePatientController {
     async handle(request: Request, response: Response) {
         try {
             const createPatientUseCase = new CreatePatientUseCase(this.userRepository, this.patientRepository)
-
-            const result = await createPatientUseCase.execute(request.body)
+            const avatar = request.file?.filename
+            const result = await createPatientUseCase.execute(request.body, avatar)
             return response.json(result)
         }catch(err: any) {
             return response.status(err.statusCode || 400).json(err.message)

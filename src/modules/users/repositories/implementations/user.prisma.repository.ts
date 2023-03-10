@@ -19,6 +19,7 @@ export class UserPrismaRepository implements IUserRepository {
                 name: data.name,
                 password: data.password,
                 username: data.username,
+                avatar: data.avatar
             }
         })
         return user;
